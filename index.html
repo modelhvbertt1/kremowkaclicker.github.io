@@ -4,30 +4,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="Icss.css">
 </head>
 <body>
-    <div name="tytuł i punkty">
-    <a>
-        <h1>Kremówka clicker</h1><br>
-    </a>
-    <h3>Punkty:</h3>
-    </div>
-<div name="przycisk graj">
-    <div>
+    <p>Wynik: <span id="wynik">0</span></p>
+    <img src="" alt="k" onclick="dodajpunkt (1)">
 
-    </div>
-</div>
-<br><br><br><br><br><br><br><br><br><br><br><br>
- <div name="kremowka">
-    <h1>Kremowka</h1>
-    <style>
-        div {
-          width:300px;
-          margin:auto;
+<button onclick="kupkursor()">Kolejny kursor [<span id="kosztkursora">15</span>] -- <span id="kursory">0</span></button>
+<button onclick="kuptworcakrem()">tworca kremówek [<span id="koszttworcakrem">100</span>] -- <span id="tworcy">0</span></button>
+
+
+    <script>
+        var wynik = 0;
+
+        wynik = wynik + 1;
+        
+        var kosztkursora = 15;
+        var kursory = 0;
+        var koszttworcakrem = 100;
+        var tworcy = 0;
+
+
+
+        function kupkursor(){
+            if(wynik >= kosztkursora ){
+                wynik = wynik - kosztkursora;
+                kursory = kursory + 1;
+               
+                document.getElementById("wynik").innerHTML = wynik;
+                document.getElementById("kosztkursora").innerHTML = kosztkursora;
+                document.getElementById("kursory").innerHTML = kursory;
+            }
         }
-        </style>
-</div>
 
+
+        function kuptworcakrem(){
+            if(wynik >= koszttworcakrem ){
+                wynik = wynik - koszttworcakrem;
+                tworcy = tworcy + 1;
+               
+                document.getElementById("wynik").innerHTML = wynik;
+                document.getElementById("kosztkursora").innerHTML = kosztkursora;
+                document.getElementById("kursory").innerHTML = kursory;
+            }
+        }
+      
+
+        function dodajpunkt(punkt){
+            wynik = wynik + punkt;
+            document.getElementById("wynik").innerHTML = wynik;
+        }
+
+        setInterval(function (){
+        wynik = wynik + kursory;
+        wynik = wynik + tworcy * 5;
+        document.getElementById("wynik").innerHTML = wynik;
+        },1000)
+    </script>
 </body>
 </html>
