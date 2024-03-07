@@ -11,6 +11,7 @@
 
 <button onclick="kupkursor()">Kolejny kursor [<span id="kosztkursora">15</span>] -- <span id="kursory">0</span></button>
 <button onclick="kuptworcakrem()">tworca kremówek [<span id="koszttworcakrem">100</span>] -- <span id="tworcy">0</span></button>
+<button onclick="kupfabrykakrem()">fabryka kremówek [<span id="kosztfabryki">10000</span>] -- <span id="fabryki">0</span></button>
 
 
     <script>
@@ -22,6 +23,8 @@
         var kursory = 0;
         var koszttworcakrem = 100;
         var tworcy = 0;
+        var kosztfabryki = 10000;
+        var fabryki = 0;
 
 
 
@@ -43,11 +46,21 @@
                 tworcy = tworcy + 1;
                
                 document.getElementById("wynik").innerHTML = wynik;
-                document.getElementById("kosztkursora").innerHTML = kosztkursora;
-                document.getElementById("kursory").innerHTML = kursory;
+                document.getElementById("koszttworcakrem").innerHTML = koszttworcakrem;
+                document.getElementById("tworcy").innerHTML = tworcy;
             }
         }
       
+        function kupfabrykakrem(){
+            if(wynik >= kosztfabryki ){
+                wynik = wynik - kosztfabryki;
+                fabryki = fabryki + 1;
+               
+                document.getElementById("wynik").innerHTML = wynik;
+                document.getElementById("kosztfabryki").innerHTML = kosztfabryki;
+                document.getElementById("fabryki").innerHTML = fabryki;
+            }
+        }
 
         function dodajpunkt(punkt){
             wynik = wynik + punkt;
@@ -57,6 +70,7 @@
         setInterval(function (){
         wynik = wynik + kursory;
         wynik = wynik + tworcy * 5;
+        wynik = wynik + fabryki * 10;
         document.getElementById("wynik").innerHTML = wynik;
         },1000)
     </script>
