@@ -4,16 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="Untitled-1.css">
 </head>
 <body>
+    <div class="lewastrona">
+        <a style="text-align: center;">
     <p>Wynik: <span id="wynik">0</span></p>
-    <img src="" alt="k" onclick="dodajpunkt (1)">
+    <p>kremowki na sekunde:<span id="kremowkinasekunde">0</span></p>
+    
+    <div class="zdjecie">
+        <img src="c:\Users\9u\Downloads\KREMOWKA.png" alt="k" onclick="dodajpunkt (1)"  height="100px" >
+    </div>
+</a>
+</div>
+ 
 
-<button onclick="kupkursor()">Kolejny kursor [<span id="kosztkursora">15</span>] -- <span id="kursory">0</span></button>
-<button onclick="kuptworcakrem()">tworca kremówek [<span id="koszttworcakrem">100</span>] -- <span id="tworcy">0</span></button>
-<button onclick="kupfabrykakrem()">fabryka kremówek [<span id="kosztfabryki">10000</span>] -- <span id="fabryki">0</span></button>
+    <div class="wszystkieprzyciski">
+        <button onclick="kupkursor()">Kolejny kursor [<span id="kosztkursora">15</span>] -- <span id="kursory">0</span></button><br>
+        <button onclick="kuptworcakrem()">tworca kremówek [<span id="koszttworcakrem">100</span>] -- <span id="tworcy">0</span></button><br>
+        <button onclick="kupfabrykakrem()">fabryka kremówek [<span id="kosztfabryki">10000</span>] -- <span id="fabryki">0</span></button>
+    </div>
 
 
+<div class="srodek">
+<div class="lewysrodek">
+ <h1>O grze</h1>
+ <p>Gra kremówka clicker została stworzona z powodu naszej pasji do kremówek papieskich. Gra polega na tym że trzeba naciskać kremowke takim spodobem zdobywa sie punkty za które można kupić ulepszenia żeby same zdobywały punkty</p>
+</div>
+
+<div class="ssrodek" >
+<h1>Przepis kremowki</h1>
+<a>1:Mąkę i masło posiekać na stolnicy, dodać wodę i ocet, dokładnie wymieszać i szybko wyrobić. <br>
+    2: Ciasto podzielić na dwie części, rozwałkować, piec w osobnych foremkach przez 30 minut w temperaturze 170ºC.<br>
+    3: Przygotować masę budyniową. Mąkę ziemniaczaną i pszenną przesiać przez sitko. 3 żółtka utrzeć z 5 łyżkami cukru i cukrem waniliowym. Następnie dodać 3/4 szklanki mleka. Dokładnie wymieszać, na koniec dodać mąki, ponownie dokładnie wymieszać.<br>
+    4: Pozostałe mleko zagotować. Do gotującego się mleka wlewać powoli, cały czas mieszając, żółtka z mąką, cukrem i mlekiem.<br>
+    5: Podgotować, następnie zdjąć z ognia. 2 żółtka wymieszać z odrobiną mleka. Dodać do ugotowanego budyniu.<br>
+    6: Białka z 2 jaj ubić na sztywno ze szczyptą soli i łyżką cukru, dodać do lekko ostudzonej masy budyniowej. Odstawić na 15 minut.<br>
+    7: Jeden kawałek upieczonego ciasta zostawić w brytfance, wyłożyć masę, rozsmarować, przykryć drugim kawałkiem ciasta, delikatnie docisnąć.
+    8: Kremówki oprószyć cukrem pudrem, pokroić na kwadraty.</a>
+</div>
+
+<div class="prawysrodek">
+    <h1>O twórcach</h1>
+    <a>Daniel B. programista zajmował sie JS oraz CSS Hubert K. Zajmował sie częścią HTML oraz robił wszystkie grafiki. Proces robienia tej gry przeglądarkowej zajął około miesiąca.Nauczyciel który nauczył nas tego co zastosowaliśmy: Pan M.</a>
+</div>
+
+</div>
+<br>
+<div class="footer">
+    <h1>.</h1>
+    <h1>Dziękujemy za zagranie w naszą gre!!!! &copy 2024</h1>
+</div>
     <script>
         var wynik = 0;
 
@@ -36,6 +77,7 @@
                 document.getElementById("wynik").innerHTML = wynik;
                 document.getElementById("kosztkursora").innerHTML = kosztkursora;
                 document.getElementById("kursory").innerHTML = kursory;
+                ilekremoweknasekunde()
             }
         }
 
@@ -48,6 +90,7 @@
                 document.getElementById("wynik").innerHTML = wynik;
                 document.getElementById("koszttworcakrem").innerHTML = koszttworcakrem;
                 document.getElementById("tworcy").innerHTML = tworcy;
+                ilekremoweknasekunde()
             }
         }
       
@@ -59,6 +102,7 @@
                 document.getElementById("wynik").innerHTML = wynik;
                 document.getElementById("kosztfabryki").innerHTML = kosztfabryki;
                 document.getElementById("fabryki").innerHTML = fabryki;
+                ilekremoweknasekunde()
             }
         }
 
@@ -73,6 +117,14 @@
         wynik = wynik + fabryki * 10;
         document.getElementById("wynik").innerHTML = wynik;
         },1000)
+
+        function ilekremoweknasekunde(){
+
+
+            document.getElementById("kremowkinasekunde").innerHTML= kursory + tworcy * 5 + fabryki * 10;
+        }
+
+        
     </script>
 </body>
 </html>
