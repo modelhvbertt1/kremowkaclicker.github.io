@@ -6,7 +6,9 @@
     <title>Document</title>
     <link rel="stylesheet" href="Untitled-1.css">
 </head>
+
 <body>
+    <div style ="background-image: url(krem.png);">
     <div class="lewastrona">
         <a style="text-align: center;">
     <p>Wynik: <span id="wynik">0</span></p>
@@ -19,12 +21,12 @@
 </div>
  
 
-    <div class="wszystkieprzyciski">
-        <button onclick="kupkursor()">Kolejny kursor [<span id="kosztkursora">15</span>] -- <span id="kursory">0</span></button><br>
+    <div class="wszystkieprzyciski"  style="background-image: url(tło.png);">
+        <button onclick="kupkursor()"> <span id="kosztkursora"></span><img src="https://kamami.pl/39472-large_default/big-round-push-button-duzy-okragly-przycisk-z-podswietleniem-led-100mm-zielony.jpg" alt="" height="30px" width="30px"> <span id="kursory">0</span></button><br>
         <button onclick="kuptworcakrem()">tworca kremówek [<span id="koszttworcakrem">100</span>] -- <span id="tworcy">0</span></button><br>
         <button onclick="kupfabrykakrem()">fabryka kremówek [<span id="kosztfabryki">10000</span>] -- <span id="fabryki">0</span></button>
     </div>
-
+ 
 
 <div class="srodek">
 <div class="lewysrodek">
@@ -54,6 +56,7 @@
 <div class="footer">
     <h1>.</h1>
     <h1>Dziękujemy za zagranie w naszą gre!!!! &copy 2024</h1>
+</div>
 </div>
     <script>
         var wynik = 0;
